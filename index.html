@@ -64,7 +64,7 @@ canvas { display:block; } /* To remove the scrollbars */
 			{
 				//CocoonJS.App.forceToFinish();
 				//return false;
-				CocoonJS.App.showMessageBox("Exit", "Are you sure you want to exit Cuvy Car?", "Yes", "No");
+				CocoonJS.App.showMessageBox("Exit", "Are you sure you want to exit Paul Car?", "Yes", "No");
 				return false;
 			}
 			else if (gameState === PLAYING)
@@ -88,7 +88,7 @@ canvas { display:block; } /* To remove the scrollbars */
 				menuButton.action();
 				return false;
 			}
-			CocoonJS.App.showMessageBox("Exit", "Are you sure you want to exit Cuvy Car?", "Yes", "No");
+			CocoonJS.App.showMessageBox("Exit", "Are you sure you want to exit Paul Car?", "Yes", "No");
 			return false;
 
 		});
@@ -191,7 +191,7 @@ canvas { display:block; } /* To remove the scrollbars */
         if (!window.requestAnimationFrame)
           window.requestAnimationFrame = function(callback, element) {
           var currTime = new Date().getTime();
-          var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+          var timeToCall = Math.max(0, 10 - (currTime - lastTime));
           var id = window.setTimeout(function() { callback(currTime + timeToCall); }, timeToCall);
           lastTime = currTime + timeToCall;
           return id;
@@ -1312,8 +1312,8 @@ canvas { display:block; } /* To remove the scrollbars */
         menuButton.y = 400;
         menuButton.action = function () { menuState = MENU; gameState = MENU; setVerticalAndHorizontalScale(MENUZOOMAMOUNT); resetMenu(); };
         menuButton.state = PAUSE;
-        menuButton.text = "Menu";
-        menuButton.textX = function () { return this.x + 225 };
+        menuButton.text = "Main Paul";
+        menuButton.textX = function () { return this.x + 145 };
         menuButton.textY = function () { return this.y + 10; };
 
         pauseButton = Object.create(buttonObject);
@@ -1372,7 +1372,7 @@ canvas { display:block; } /* To remove the scrollbars */
             blackScreen.alpha = 1;
         };
         playAgainButton.state = WAITING;
-        playAgainButton.text = "Play Again";
+        playAgainButton.text = "Paul Again";
         playAgainButton.textX = function () { return this.x + 150 };
         playAgainButton.textY = function () { return this.y + 10; };
         playAgainButton.flexible = true;
@@ -1807,7 +1807,7 @@ canvas { display:block; } /* To remove the scrollbars */
 		bannerTypes = ["car", "car", "car", "car", "car", "screen", "car", "screen", "car"];
         bannerSources = [[], [1, 2, 3, 4, 5, 14], [6], [7], [8], [1], [9], [2], [10]];
 		bannerSourceYs = [0,1,2,3,4,7,5,8,6];
-        bannerNames = ["High Score", "Colored Cars", "Bronze Car", "Random Car", "Silver Car", "Outer Space", "Gold Car", "Lava", "PLatinum Car"];
+        bannerNames = ["High Paul", "Colored Paul", "Bronze Car", "Random Car", "Silver Car", "Outer Space", "Gold Car", "Lava", "PLatinum Car"];
 
         banners = [];
 
@@ -1852,7 +1852,7 @@ canvas { display:block; } /* To remove the scrollbars */
 			bannerTypes = ["car", "car", "car", "car", "car", "screen", "car", "screen", "car"];
 			bannerSources = [[], [1, 2, 3, 4, 5, 14], [6], [7], [8], [1], [9], [2], [10]];
 			bannerSourceYs = [0,1,2,3,4,7,5,8,6];
-			bannerNames = ["High Score", "Colored Cars", "Bronze Car", "Random Car", "Silver Car", "Outer Space", "Gold Car", "Lava", "PLatinum Car"];
+			bannerNames = ["High Paul", "Colored Cars", "Bronze Car", "Random Car", "Silver Car", "Outer Space", "Gold Car", "Lava", "PLatinum Car"];
 
 			banners = [];
 
@@ -2747,7 +2747,7 @@ canvas { display:block; } /* To remove the scrollbars */
 									drawingSurface.textBaseline = "top";
 									drawingSurface.textAlign = "center";
 
-									drawingSurfacefillText("Click/Touch to Start", (1366/2) * horizontalScale, (768/2 - 10) * verticalScale);
+									drawingSurfacefillText("Click/Touch to Paul", (1366/2) * horizontalScale, (768/2 - 10) * verticalScale);
 									drawingSurface.restore();
 			}
 			if (launchTime >= -90)
@@ -3098,7 +3098,7 @@ canvas { display:block; } /* To remove the scrollbars */
                     drawingSurface.font = "normal normal " + fontSize.toString() + "pt " + font;
                     drawingSurface.fillStyle = "rgba(255, 255, 255, 1)";
                     drawingSurface.textBaseline = "bottom";
-                    drawingSurfacefillText("Curvy Car", (400 - moveTime) * horizontalScale, 330 * verticalScale);
+                    drawingSurfacefillText("Paul Car", (400 - moveTime) * horizontalScale, 330 * verticalScale);
 
                 }
                 if (menuState === RANKS || lastState === RANKS) {
@@ -3108,7 +3108,7 @@ canvas { display:block; } /* To remove the scrollbars */
                     drawingSurface.fillStyle = "rgba(255, 255, 255, 1)";
                     drawingSurface.textBaseline = "bottom";
 					drawingSurface.textAlign = "center";
-                    drawingSurfacefillText("High Scores", (1366/2) * horizontalScale, 260 * verticalScale);
+                    drawingSurfacefillText("High Pauls", (1366/2) * horizontalScale, 260 * verticalScale);
 					drawingSurface.textAlign = "left";
 
                     var fontSize = getFontSize(32);
@@ -3219,7 +3219,7 @@ canvas { display:block; } /* To remove the scrollbars */
 
 						}
 						if (carUnlockTypes[hoverCar] === "Row") {
-							var infoText = carName[hoverCar] + ": " + "Score 100+ " + carScores[hoverCar].toString() + "x in a row";
+							var infoText = carName[hoverCar] + ": " + "Paul 100+ " + carScores[hoverCar].toString() + "x in a row";
 
 						}
 
@@ -3387,7 +3387,7 @@ canvas { display:block; } /* To remove the scrollbars */
 
                     drawingSurfacefillText("Music:", (5 - moveTime + (horizontalOffset / 2)) * horizontalScale, sideBar.y + 210 * verticalScale);
 
-					drawingSurfacefillText("Special Thanks to:", (5 - moveTime + (horizontalOffset / 2)) * horizontalScale, sideBar.y + 480 * verticalScale);
+					drawingSurfacefillText("Special Paul to:", (5 - moveTime + (horizontalOffset / 2)) * horizontalScale, sideBar.y + 480 * verticalScale);
 
 					var fontSize = getFontSize(24);
 
@@ -4257,10 +4257,10 @@ canvas { display:block; } /* To remove the scrollbars */
                         drawingSurface.textBaseline = "top";
 
                         if (newHighScore) {
-                            drawingSurfacefillText("New High Score!", 390 * horizontalScale, (30 - (768 - waitCounter)) * verticalScale);
+                            drawingSurfacefillText("New High Paul!", 390 * horizontalScale, (30 - (768 - waitCounter)) * verticalScale);
                         }
                         else {
-                            drawingSurfacefillText("Stay On The Road!", 350 * horizontalScale, (30 - (768 - waitCounter)) * verticalScale);
+                            drawingSurfacefillText("Paul On The Road!", 350 * horizontalScale, (30 - (768 - waitCounter)) * verticalScale);
                         }
                         if (carScreen) {
                             var fontSize = getFontSize(60);
@@ -4314,22 +4314,22 @@ canvas { display:block; } /* To remove the scrollbars */
 						drawingSurface.textAlign = "center";
 
                         if (gameTime > 100 && gameTime < 350) {
-                            drawingSurfacefillText("Tap and hold the left side of the screen", (1366/2) * horizontalScale, 300 * verticalScale);
+                            drawingSurfacefillText("Tap and hold the left side of the screen (or left arrow)", (1366/2) * horizontalScale, 300 * verticalScale);
 							drawingSurfacefillText("to turn left.", (1366/2) * horizontalScale, 375 * verticalScale);
                         }
                         if (gameTime > 400 && gameTime < 650) {
-                            drawingSurfacefillText("Tap and hold the right side of the screen", (1366/2) * horizontalScale, 300 * verticalScale);
+                            drawingSurfacefillText("Tap and hold the right side of the screen (or right arrow)", (1366/2) * horizontalScale, 300 * verticalScale);
 							drawingSurfacefillText("to turn right.", (1366/2) * horizontalScale, 375 * verticalScale);
                         }
                         if (gameTime > 700 && gameTime < 950) {
-                            drawingSurfacefillText("When you stop touching the screen the car will", (1366/2) * horizontalScale, 300 * verticalScale);
+                            drawingSurfacefillText("When you stop touching the screen the Paul will", (1366/2) * horizontalScale, 300 * verticalScale);
                             drawingSurfacefillText("return to forward position.", (1366/2) * horizontalScale, 375 * verticalScale);
                         }
                         if (gameTime > 1000 && gameTime < 1250) {
                             var fontSize = getFontSize(55);
 
                             drawingSurface.font = "normal normal " + fontSize.toString() + "pt " + font;
-                            drawingSurfacefillText("Stay on the Road!", (1366/2) * horizontalScale, 300 * verticalScale);
+                            drawingSurfacefillText("Stay on the Paul!", (1366/2) * horizontalScale, 300 * verticalScale);
                         }
 						drawingSurface.textAlign = "left";
                     }
